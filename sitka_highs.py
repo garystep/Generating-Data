@@ -9,7 +9,7 @@ header_row = next(reader)
 
 highs = []
 for row in reader:
-    high = int(row[5])
+    high = int(row[4])
     highs.append(high)
 
 print(highs)
