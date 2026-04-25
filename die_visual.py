@@ -23,5 +23,6 @@ for value in range(2, 2 * die_1.num_sides + 1):
 # Visualize the results.
 title = "Results of rolling two D6 1000 times"
 labels = {"x": "Result", "y": "Frequency"}
-fig = px.bar(x=range(2, 2 * die_1.num_sides + 1), y=frequencies, title=title, labels=labels)
+fig = px.bar(x=range(2, 2 * die_1.num_sides + 1), 
+             y=frequencies, title=title, labels=labels)
 fig.show()
