@@ -7,4 +7,9 @@ lines = path.read_text(encoding='utf-8').splitlines()
 reader = csv.reader(lines)
 header_row = next(reader)
 
-print(header_row)
+highs = []
+for row in reader:
+    high = int(row[5])
+    highs.append(high)
+
+print(highs)
