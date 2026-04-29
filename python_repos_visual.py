@@ -15,10 +15,16 @@ print(f'Total repositories: {response_dict["total_count"]}')
 
 # Explore information about the repositories.
 repo_dicts = response_dict['items']
-repo_names, stars = [], []
+repo_names, stars, hover_texts = [], [], []
 for repo_dict in repo_dicts:
     repo_names.append(repo_dict['name'])
     stars.append(repo_dict['stargazers_count'])
+
+    # Build hover text for each repository.
+    owner = repo_dict['owner']['login']
+    description = repo_dict['description']
+    hover_text = f'{owner}<br />{description}'
+    hover_texts.append(hover_text)
 
 # Create a bar chart to visualize the star counts.
 fig = px.bar(x=repo_names, y=stars, labels={'x': 'Repository', 'y': 'Stars'})
